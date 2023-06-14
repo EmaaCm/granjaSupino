@@ -1,4 +1,54 @@
-lista_productos=[];
+let modal_divi= document.getElementById("modal_div")
+let carrito=[];
+let galeria= document.getElementById("galeria");
+const ver_carrito = document.getElementById("ver_carrito");
+
+
+lista_productos.forEach((elemento) =>{
+    let ventana=document.createElement("div");
+        ventana.className="card"
+        ventana.innerHTML= `
+        <img src="${elemento.img}">
+        <h3 class="nombre_prod"> ${elemento.nombre}</h3>
+        <p class="precio"> $ ${elemento.precio}</p>
+
+
+    `;
+
+galeria.append(ventana);
+
+let comprar= document.createElement("button");
+comprar.innerText="Comprar";
+comprar.className="btn_compra"
+ventana.append(comprar);
+
+comprar.addEventListener("click", ()=>{
+
+    carrito.push({
+        id: elemento.id,
+        nombre: elemento.nombre,
+        precio: elemento.precio
+
+    })
+console.log(carrito);
+})
+
+
+
+});
+
+
+ver_carrito.addEventListener ("click", ()=>{
+
+let modal_header= document.createElement("div");
+modal_header.className="modal_head";
+modal_header.innerHTML=` <h1>ema</h1>
+`
+modal_divi.append(modal_header);
+console.log("cero")
+});
+
+
 
 
 function agregar_producto(){
@@ -15,11 +65,13 @@ function agregar_producto(){
 
 //Esto es una plantilla de objetos
 class productos{
-    constructor (nombre, marca,precio,stock){
+    constructor (id,nombre, marca,precio,stock,img){
+        this.id=id;
         this.nombre= nombre;
         this.marca= marca;
         this.precio= precio;
         this.stock= stock;
+        this.img= img;
     }
 
 
@@ -44,6 +96,26 @@ get_stock(){
 }
 
 
+console.log(lista_productos);
+function agregar_carrito(){
+
+    console.log("Compraste")
+
+
+}
+
+// let btn_comprar = document.getElementById("btn_comprar");
+
+// btn_comprar.addEventListener("click", agregar_carrito);
+
+
+
+
+
+
+
+
+/*
 
 function precio_parcial(producto,cantidad){
 
@@ -166,3 +238,4 @@ if (acceso!="cliente" || acceso !="admin"){
     alert("Por favor recargue la pagina e ingrese un perfil valido");
 }
 }
+*/
