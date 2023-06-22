@@ -3,6 +3,45 @@ let carrito=[];
 let galeria= document.getElementById("galeria");
 const ver_carrito = document.getElementById("ver_carrito");
 
+let clientes=[];
+
+
+class cliente{
+    constructor (nombre, apellido,mail){
+        this.nombre=nombre;
+        this.apellido= apellido;
+        this.mail= mail;
+    }
+}
+
+
+let registrarse= document.createElement("button");
+registrarse.innerText="Registrarse";
+registrarse.className="btn_registro";
+div_registro.append(registrarse);
+ registrarse.addEventListener("click" , ()=>{
+
+    nombre=prompt("Ingresar nombre");
+    apellido=prompt("ingresar apellido");
+    mail=prompt("Ingrese el mail de inicio de sesion");
+
+    //este const, crea un objeto con la plantilla que tomo de la clase
+    let cliente_nuevo= new cliente(nombre,apellido,mail);
+    //Esto hace un push en el arreglo de productos, introduciendo el objeto "producto que creamos anteriormente"
+    clientes.push(cliente_nuevo);
+
+    console.log(clientes);
+
+
+
+    let clientes_JSON= JSON.stringify(clientes);
+    console.log(clientes_JSON);
+
+    localStorage.setItem("arr_clientes", clientes_JSON)
+
+ })
+
+
 
 lista_productos.forEach((elemento) =>{
     let ventana=document.createElement("div");
