@@ -1,10 +1,38 @@
+let delete_element = document.getElementsByClassName("price_delete")
 let modal_div= document.getElementById("modal_div")
 let carrito=[];
 let galeria= document.getElementById("galeria");
 const ver_carrito = document.getElementById("ver_carrito");
-
 let clientes=[];
 
+lista_productos.forEach((elemento) =>{
+    let ventana=document.createElement("div");
+        ventana.className="card"
+        ventana.innerHTML= `
+        <img src="${elemento.img}">
+        <h3 class="nombre_prod"> ${elemento.nombre}</h3>
+        <p class="precio"> $ ${elemento.precio}</p>
+`;
+
+galeria.append(ventana);
+
+let comprar= document.createElement("button");
+comprar.innerText="Comprar";
+comprar.className="btn_comprar"
+ventana.append(comprar);
+
+comprar.addEventListener("click", ()=>{
+
+    carrito.push({
+        id: elemento.id,
+        nombre: elemento.nombre,
+        precio: elemento.precio,
+        cantidad: elemento.cantidad,
+        img: elemento.img
+
+    })
+})
+});
 
 class cliente{
     constructor (nombre, apellido,mail){
@@ -40,80 +68,6 @@ div_registro.append(registrarse);
     localStorage.setItem("arr_clientes", clientes_JSON)
 
  })
-
-
-
-lista_productos.forEach((elemento) =>{
-    let ventana=document.createElement("div");
-        ventana.className="card"
-        ventana.innerHTML= `
-        <img src="${elemento.img}">
-        <h3 class="nombre_prod"> ${elemento.nombre}</h3>
-        <p class="precio"> $ ${elemento.precio}</p>
-`;
-
-galeria.append(ventana);
-
-let comprar= document.createElement("button");
-comprar.innerText="Comprar";
-comprar.className="btn_compra"
-ventana.append(comprar);
-
-comprar.addEventListener("click", ()=>{
-
-    carrito.push({
-        id: elemento.id,
-        nombre: elemento.nombre,
-        precio: elemento.precio
-
-    })
-console.log(carrito);
-})
-
-
-
-});
-
-
-ver_carrito.addEventListener ("click", ()=>{
-
-let modal_header= document.createElement("div");
-modal_header.className="modal_head";
-modal_header.innerHTML=` <h1 class="modal_header_title">Carrito</h1>
-`;
-modal_div.append(modal_header);
-
-let modal_btn = document.createElement("h1");
-modal_btn.innerText ="X";
-modal_btn.className="btn_modal";
-modal_header.append(modal_btn);
-
-
-carrito.forEach((elemento)=> {
-let modal_body= document.createElement("div");
-modal_body.className="modal_body";
-modal_body.innerHTML=`
-
-<h3> ${elemento.nombre}</h3>
-<p class="price"> ${elemento.precio}</p>
-
-`
-modal_div.append(modal_body);
-})
-
-let total= carrito.reduce((acc, item) => acc + item.precio, 0 )
-
-
-
-let modal_foot= document.createElement("div");
-modal_foot.className="modal_total";
-modal_foot.innerHTML=` total a pagar: $${total}
-`
-modal_div.append(modal_foot);
-
-
-});
-
 
 
 function agregar_producto(){

@@ -5,7 +5,7 @@
 
 
 body{
-    background-color: whitesmoke;
+    background-color:white;
     }
 
 #galeria{
@@ -19,6 +19,7 @@ body{
 
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f2f2f2;
     max-width: 300px;
     margin: auto;
     margin-top: 3rem;
@@ -31,12 +32,17 @@ body{
     height: 250px;
 }
 
+.card button{
+    background:#e41c23;
+    color: #f2f2f2;
+}
+
 
 .modal_head{
     display: flex;
     justify-content: space-around;
     background-color: #0a0909;
-    color: #fff;
+    color: red;
     width: 100%;
 }
 
@@ -45,11 +51,10 @@ body{
 }
 
 #modal_div{
-    width: 60%;
+    width: 30%;
     margin: 0 10%;
     max-height: 88vh;
-    color: #fff;
-    background-color: #121212;
+    background-color:whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,14 +72,17 @@ body{
     cursor: pointer;
 }
 .modal_total{
+    color: #0a0909;
     font-size: 25px;
     padding: 20px;
     text-align: center;
     padding-top: 20px;
 }
 
+
 #modal_div > .modal_body{
     display: flex;
+    color: #0a0909;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -82,19 +90,21 @@ body{
     margin: 10%;
 }
 
+.modal_body > img{
+    width: 20%;
+    height: 10%;
+    margin-left: 0.5 rem;
+}
+
 .price{
-    color: gray;
+    color: black;
     font-size: 22px;
 }
 
-// h1{
-//     margin-top: 1rem;
-//     margin-left: 1rem;
-// }
-// h2{
-//     margin-top: 1rem;
-//     text-align: center;
-// }
+.price_delete{
+    color: gray;
+    font-size: 22px
+}
 
 .nav-bar{
     display: flex;
@@ -107,3 +117,6 @@ body{
     margin-top: 0.5rem;
 }
 
+.eliminar-producto{
+    cursor: pointer;
+}
