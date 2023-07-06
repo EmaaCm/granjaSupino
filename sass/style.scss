@@ -44,7 +44,7 @@ body{
 .modal_head{
     display: flex;
     justify-content: space-around;
-    background-color: #0a0909;
+    background-color: lightblue;
     color: red;
     width: 100%;
 }
@@ -85,7 +85,7 @@ body{
 
 #modal_div > .modal_body{
     display: flex;
-    color: #0a0909;
+    color: black;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -105,7 +105,7 @@ body{
 }
 
 .price_delete{
-    color: gray;
+    color: black;
     font-size: 22px
 }
 
@@ -132,6 +132,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: lightblue;
 }
 
 .logo{
@@ -145,9 +146,16 @@ body{
 
 #ver_carrito{
     margin-left:auto;
+    font-size: 2.5rem;
+
 }
 
-.h1{
+h1{
     margin-left: auto;
+    color: black;
+    //-webkit-text-stroke: 2px orangered;
+}
 
+h2{
+    text-align: center;
 }

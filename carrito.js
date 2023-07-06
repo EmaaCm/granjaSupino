@@ -13,7 +13,7 @@ modal_header.innerHTML=` <h1 class="modal_header_title">Carrito</h1>
 modal_div.append(modal_header);
 
 let modal_btn = document.createElement("h1");
-modal_btn.innerText ="X";
+modal_btn.innerText ="❌";
 modal_btn.className="btn_modal";
 modal_header.append(modal_btn);
 
@@ -71,6 +71,7 @@ let eliminarProducto = () =>{
     })
 
 pintarCarrito();
+carritoSave();
 contadorCarrito();
 };
 
@@ -80,5 +81,18 @@ contadorCarrito();
 
 let contadorCarrito = () =>{
     cantidadCarrito.style.display ="block"
-    cantidadCarrito.innerText= carrito.length
+
+    const carritoLength= carrito.length;
+
+    localStorage.setItem("carritoLength" , JSON.stringify(carritoLength));
+
+    cantidadCarrito.innerText= JSON.parse(localStorage.getItem("carritoLength"))
     } 
+
+
+// Esta funcion guarda todos los productos que tenemos en el carrito, en el local Storage
+let carritoSave = ()=>{
+    localStorage.setItem("carritoCompra", JSON.stringify(carrito));
+}
+
+contadorCarrito();
