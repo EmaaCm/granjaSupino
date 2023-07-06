@@ -28,8 +28,9 @@ modal_body.className="modal_body";
 modal_body.innerHTML=`
 <img src="${elemento.img}">
 <h3> ${elemento.nombre}</h3>
-<p class="cant">Kg:${elemento.cantidad}</p>
 <p class="price"> $${elemento.precio}</p>
+<p class="cant">Kg:${elemento.cantidad}</p>
+<P class="cant"> Sub-Total: ${elemento.precio*elemento.cantidad}</p>
 
 `
 modal_div.append(modal_body);
@@ -46,7 +47,7 @@ eliminar.addEventListener("click" , eliminarProducto)
 
 })
 //Totaliza el la suma de los productos que hay en el carrito
-let total= carrito.reduce((acc, item) => acc + item.precio, 0 )
+let total= carrito.reduce((acc, item) => acc + item.precio*item.cantidad, 0 )
 
 let modal_foot= document.createElement("div");
 modal_foot.className="modal_total";
@@ -59,6 +60,8 @@ modal_div.append(modal_foot);
 
 ver_carrito.addEventListener("click", pintarCarrito)
 
+
+
 //se crea una funcion que busca(find) el id del elemento del btn eliminar(filter) y lo saca del carrito(pintarCarrito)
 let eliminarProducto = () =>{
     let busquedaId = carrito.find((elemento) => elemento.id);
@@ -68,5 +71,14 @@ let eliminarProducto = () =>{
     })
 
 pintarCarrito();
+contadorCarrito();
+};
 
-}
+
+
+//vamos a configurar el contador debajo del carrito
+
+let contadorCarrito = () =>{
+    cantidadCarrito.style.display ="block"
+    cantidadCarrito.innerText= carrito.length
+    } 

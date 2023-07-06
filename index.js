@@ -1,8 +1,10 @@
 let delete_element = document.getElementsByClassName("price_delete")
 let modal_div= document.getElementById("modal_div")
-let carrito=[];
 let galeria= document.getElementById("galeria");
 const ver_carrito = document.getElementById("ver_carrito");
+let cantidadCarrito = document.getElementById("cantidadCarrito")
+
+let carrito=[];
 let clientes=[];
 
 lista_productos.forEach((elemento) =>{
@@ -23,6 +25,19 @@ ventana.append(comprar);
 
 comprar.addEventListener("click", ()=>{
 
+    //usando el metodo Some puedo ver todo lo que hay en el carrito y si 2 ids o mas coinciden arrojan un "TRUE"
+    let repetido = carrito.some((productoRepetido)=> productoRepetido.id === elemento.id);
+
+//este if dice que si repetido  es true...
+if(repetido){
+    carrito.map((prod) =>{
+        if (prod.id === elemento.id){
+            prod.cantidad++
+        }
+    })
+}
+
+else{
     carrito.push({
         id: elemento.id,
         nombre: elemento.nombre,
@@ -30,9 +45,12 @@ comprar.addEventListener("click", ()=>{
         cantidad: elemento.cantidad,
         img: elemento.img
 
-    })
+        });
+    }
+    contadorCarrito();
 })
 });
+
 
 class cliente{
     constructor (nombre, apellido,mail){
@@ -42,7 +60,7 @@ class cliente{
     }
 }
 
-
+/*
 let registrarse= document.createElement("button");
 registrarse.innerText="Registrarse";
 registrarse.className="btn_registro";
@@ -68,7 +86,7 @@ div_registro.append(registrarse);
     localStorage.setItem("arr_clientes", clientes_JSON)
 
  })
-
+*/
 
 function agregar_producto(){
     nombre=prompt("Ingrese el nombre del nuevo producto");
@@ -112,15 +130,6 @@ get_stock(){
     }
 
 }
-}
-
-
-console.log(lista_productos);
-function agregar_carrito(){
-
-    console.log("Compraste")
-
-
 }
 
 // let btn_comprar = document.getElementById("btn_comprar");

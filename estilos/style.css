@@ -20,6 +20,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #f2f2f2;
   max-width: 300px;
+  width: 25%;
   margin: auto;
   margin-top: 3rem;
   text-align: center;
@@ -27,7 +28,7 @@ body {
 }
 
 .card > img {
-  width: 90%;
+  width: 65%;
   height: 250px;
 }
 
@@ -105,8 +106,26 @@ body {
   font-size: 22px;
 }
 
-.nav-bar {
+#cantidadCarrito {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 4px;
+  top: 37px;
+  right: 14px;
+  position: absolute;
+  display: none;
+}
+
+.eliminar-producto {
+  cursor: pointer;
+}
+
+#navBar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -114,8 +133,13 @@ body {
   height: 4rem;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
+  margin-right: auto;
 }
 
-.eliminar-producto {
-  cursor: pointer;
+#ver_carrito {
+  margin-left: auto;
+}
+
+.h1 {
+  margin-left: auto;
 }/*# sourceMappingURL=style.css.map */
