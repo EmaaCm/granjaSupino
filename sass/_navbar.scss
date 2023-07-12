@@ -1,0 +1,21 @@
+// nav-bar
+#navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.logo{
+    width:4.5rem;
+    height:4rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-right: auto;
+
+}
+#ver_carrito{
+    margin-left:auto;
+    font-size: 2.5rem;
+
+}

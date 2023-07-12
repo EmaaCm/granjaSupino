@@ -1,4 +1,6 @@
-
+@import "carrito";
+@import "galeria";
+@import "navbar";
 
 * {
     padding: 0%;
@@ -10,145 +12,6 @@ body{
     background-color:white;
     }
 
-#galeria{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
-}
-
-.card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: #f2f2f2;
-    max-width: 300px;
-    width: 25%;
-    margin: auto;
-    margin-top: 3rem;
-    text-align: center;
-    font-family: arial;
-}
-
-.card > img{
-    width: 65%;
-    height: 250px;
-}
-
-.card button{
-    background:#e41c23;
-    color: #f2f2f2;
-}
-
-
-.modal_head{
-    display: flex;
-    justify-content: space-around;
-    background-color: lightblue;
-    color: red;
-    width: 100%;
-}
-
-.modal_header_title{
-    justify-self: start;
-}
-
-#modal_div{
-    width: 30%;
-    margin: 0 10%;
-    max-height: 88vh;
-    background-color:whitesmoke;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    overflow: auto;
-    z-index: 9;
-    top: 12vh;
-    scrollbar-color: none;
-}
-#modal_div::-webkit-scrollbar{
-    display: none;
-}
-
-.btn_modal{
-    cursor: pointer;
-}
-.modal_total{
-    color: #0a0909;
-    font-size: 25px;
-    padding: 20px;
-    text-align: center;
-    padding-top: 20px;
-}
-
-
-#modal_div > .modal_body{
-    display: flex;
-    color: black;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 70%;
-    margin: 10%;
-}
-
-.modal_body > img{
-    width: 20%;
-    height: 10%;
-    margin-left: 0.5 rem;
-}
-
-.price{
-    color: black;
-    font-size: 22px;
-}
-
-.price_delete{
-    color: black;
-    font-size: 22px
-}
-
-#cantidadCarrito{
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    font-size: 12px;
-    padding: 4px;
-    top: 37px;
-    right: 14px;
-    position: absolute;
-    display: none;
-}
-
-.eliminar-producto{
-    cursor: pointer;
-}
-
-
-
-// nav-bar
-#navBar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: lightblue;
-}
-
-.logo{
-    width:4.5rem;
-    height:4rem;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
-    margin-right: auto;
-
-}
-
-#ver_carrito{
-    margin-left:auto;
-    font-size: 2.5rem;
-
-}
 
 h1{
     margin-left: auto;
@@ -159,3 +22,7 @@ h1{
 h2{
     text-align: center;
 }
+
+
+
+
