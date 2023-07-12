@@ -1,42 +1,3 @@
-* {
-  padding: 0%;
-  margin: 0%;
-}
-
-body {
-  background-color: white;
-}
-
-#galeria {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  margin-left: 80px;
-  margin-right: 80px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f2f2f2;
-  max-width: 300px;
-  width: 25%;
-  margin: auto;
-  margin-top: 3rem;
-  text-align: center;
-  font-family: arial;
-}
-
-.card > img {
-  width: 65%;
-  height: 250px;
-}
-
-.card button {
-  background: #e41c23;
-  color: #f2f2f2;
-}
-
 .modal_head {
   display: flex;
   justify-content: space-around;
@@ -122,6 +83,36 @@ body {
   cursor: pointer;
 }
 
+#galeria {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f2f2f2;
+  max-width: 300px;
+  width: 25%;
+  margin: auto;
+  margin-top: 3rem;
+  text-align: center;
+  font-family: arial;
+}
+
+.card > img {
+  width: 65%;
+  height: 250px;
+}
+
+.card button {
+  background: #e41c23;
+  color: #f2f2f2;
+}
+
 #navBar {
   display: flex;
   justify-content: space-between;
@@ -140,6 +131,15 @@ body {
 #ver_carrito {
   margin-left: auto;
   font-size: 2.5rem;
+}
+
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  background-color: white;
 }
 
 h1 {
