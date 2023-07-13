@@ -1,6 +1,4 @@
 
-
-
 //funcion que va generando un Modal con todos los elemnetos que vamos agregando al carrito
 let pintarCarrito = ()=>{
     modal_div.innerHTML="";
@@ -31,19 +29,16 @@ modal_body.innerHTML=`
 <p class="price"> $${elemento.precio}</p>
 <p class="cant">Kg:${elemento.cantidad}</p>
 <P class="cant"> Sub-Total: ${elemento.precio*elemento.cantidad}</p>
-
+<span class="eliminar-producto"> ❌ </span>
 `
 modal_div.append(modal_body);
 
+ let eliminarPr = modal_body.querySelector(".eliminar-producto");
 
-//Crea el boton de eliminar para los elementos del carrito
-let eliminar = document.createElement("span");
-eliminar.className= "eliminar-producto";
-eliminar.innerText="❌";
-modal_body.append(eliminar);
-
-eliminar.addEventListener("click" , eliminarProducto)
-
+ //escucha el boton eliminar y llama a la funcion
+eliminarPr.addEventListener ("click", ()=>{
+    eliminarProducto(elemento.id);
+})
 
 })
 //Totaliza el la suma de los productos que hay en el carrito
@@ -55,7 +50,6 @@ modal_foot.innerHTML=` total a pagar: $${total}
 `
 modal_div.append(modal_foot);
 
-
 };
 
 ver_carrito.addEventListener("click", pintarCarrito)
@@ -63,8 +57,8 @@ ver_carrito.addEventListener("click", pintarCarrito)
 
 
 //se crea una funcion que busca(find) el id del elemento del btn eliminar(filter) y lo saca del carrito(pintarCarrito)
-let eliminarProducto = () =>{
-    let busquedaId = carrito.find((elemento) => elemento.id);
+let eliminarProducto = (id) =>{
+    let busquedaId = carrito.find((producto) => producto.id === id);
 
     carrito = carrito.filter((carritoId) =>{
         return carritoId !== busquedaId;
@@ -78,7 +72,6 @@ contadorCarrito();
 
 
 //vamos a configurar el contador debajo del carrito
-
 let contadorCarrito = () =>{
     cantidadCarrito.style.display ="block"
 
@@ -87,8 +80,7 @@ let contadorCarrito = () =>{
     localStorage.setItem("carritoLength" , JSON.stringify(carritoLength));
 
     cantidadCarrito.innerText= JSON.parse(localStorage.getItem("carritoLength"))
-    } 
-
+} 
 
 // Esta funcion guarda todos los productos que tenemos en el carrito, en el local Storage
 let carritoSave = ()=>{
